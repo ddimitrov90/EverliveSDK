@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21786B721CE78A4A00FDCB9E /* EverliveSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 21786B711CE78A4A00FDCB9E /* EverliveSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21C2B7011CE78B890092B008 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6C11CE78B890092B008 /* AccessToken.swift */; };
+		21C2B7021CE78B890092B008 /* AlamofireExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6C21CE78B890092B008 /* AlamofireExtensions.swift */; };
+		21C2B7031CE78B890092B008 /* AuthenticationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6C31CE78B890092B008 /* AuthenticationHandler.swift */; };
+		21C2B7041CE78B890092B008 /* BaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6C41CE78B890092B008 /* BaseHandler.swift */; };
+		21C2B7051CE78B890092B008 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6C51CE78B890092B008 /* Constants.swift */; };
+		21C2B7061CE78B890092B008 /* CreateBaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6C61CE78B890092B008 /* CreateBaseResult.swift */; };
+		21C2B7071CE78B890092B008 /* CreateMultipleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6C71CE78B890092B008 /* CreateMultipleHandler.swift */; };
+		21C2B7081CE78B890092B008 /* CreateSingleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6C81CE78B890092B008 /* CreateSingleHandler.swift */; };
+		21C2B7091CE78B890092B008 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6C91CE78B890092B008 /* DataHandler.swift */; };
+		21C2B70A1CE78B890092B008 /* DataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6CA1CE78B890092B008 /* DataItem.swift */; };
+		21C2B70B1CE78B890092B008 /* DataItemMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6CB1CE78B890092B008 /* DataItemMetadata.swift */; };
+		21C2B70C1CE78B890092B008 /* DeleteAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6CC1CE78B890092B008 /* DeleteAll.swift */; };
+		21C2B70D1CE78B890092B008 /* DeleteByIdHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6CD1CE78B890092B008 /* DeleteByIdHandler.swift */; };
+		21C2B70E1CE78B890092B008 /* DeleteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6CE1CE78B890092B008 /* DeleteResult.swift */; };
+		21C2B70F1CE78B890092B008 /* DownloadFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6CF1CE78B890092B008 /* DownloadFileHandler.swift */; };
+		21C2B7101CE78B890092B008 /* EverliveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6D01CE78B890092B008 /* EverliveApp.swift */; };
+		21C2B7111CE78B890092B008 /* EverliveCompoundQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6D11CE78B890092B008 /* EverliveCompoundQuery.swift */; };
+		21C2B7121CE78B890092B008 /* EverliveConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6D21CE78B890092B008 /* EverliveConnection.swift */; };
+		21C2B7131CE78B890092B008 /* EverliveError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6D31CE78B890092B008 /* EverliveError.swift */; };
+		21C2B7141CE78B890092B008 /* EverliveQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6D41CE78B890092B008 /* EverliveQuery.swift */; };
+		21C2B7151CE78B890092B008 /* EverliveRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6D51CE78B890092B008 /* EverliveRequest.swift */; };
+		21C2B7161CE78B890092B008 /* EverliveResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6D61CE78B890092B008 /* EverliveResponse.swift */; };
+		21C2B7171CE78B890092B008 /* EVReflectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6D71CE78B890092B008 /* EVReflectionExtensions.swift */; };
+		21C2B7181CE78B890092B008 /* ExpandDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6D81CE78B890092B008 /* ExpandDefinition.swift */; };
+		21C2B7191CE78B890092B008 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6D91CE78B890092B008 /* File.swift */; };
+		21C2B71A1CE78B890092B008 /* FilesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6DA1CE78B890092B008 /* FilesHandler.swift */; };
+		21C2B71B1CE78B890092B008 /* FilterCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6DB1CE78B890092B008 /* FilterCondition.swift */; };
+		21C2B71C1CE78B890092B008 /* FilterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6DC1CE78B890092B008 /* FilterProtocol.swift */; };
+		21C2B71D1CE78B890092B008 /* GenericRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6DD1CE78B890092B008 /* GenericRequestHandler.swift */; };
+		21C2B71E1CE78B890092B008 /* GenericResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6DE1CE78B890092B008 /* GenericResult.swift */; };
+		21C2B71F1CE78B890092B008 /* GetAllHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6DF1CE78B890092B008 /* GetAllHandler.swift */; };
+		21C2B7201CE78B890092B008 /* GetByFilterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6E01CE78B890092B008 /* GetByFilterHandler.swift */; };
+		21C2B7211CE78B890092B008 /* GetByIdHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6E11CE78B890092B008 /* GetByIdHandler.swift */; };
+		21C2B7221CE78B890092B008 /* GetCountHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6E21CE78B890092B008 /* GetCountHandler.swift */; };
+		21C2B7231CE78B890092B008 /* LoginHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6E31CE78B890092B008 /* LoginHandler.swift */; };
+		21C2B7241CE78B890092B008 /* LoginMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6E41CE78B890092B008 /* LoginMethod.swift */; };
+		21C2B7251CE78B890092B008 /* LogoutHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6E51CE78B890092B008 /* LogoutHandler.swift */; };
+		21C2B7261CE78B890092B008 /* MasterKeyLoginMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6E61CE78B890092B008 /* MasterKeyLoginMethod.swift */; };
+		21C2B7271CE78B890092B008 /* MultipleResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6E71CE78B890092B008 /* MultipleResult.swift */; };
+		21C2B7281CE78B890092B008 /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6E81CE78B890092B008 /* Paging.swift */; };
+		21C2B7291CE78B890092B008 /* PermissionsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6E91CE78B890092B008 /* PermissionsInfo.swift */; };
+		21C2B72A1CE78B890092B008 /* PropertyObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6EA1CE78B890092B008 /* PropertyObservable.swift */; };
+		21C2B72B1CE78B890092B008 /* QueryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6EB1CE78B890092B008 /* QueryProtocol.swift */; };
+		21C2B72C1CE78B890092B008 /* RegexCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6EC1CE78B890092B008 /* RegexCondition.swift */; };
+		21C2B72D1CE78B890092B008 /* ResultBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6ED1CE78B890092B008 /* ResultBase.swift */; };
+		21C2B72E1CE78B890092B008 /* SingleResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6EE1CE78B890092B008 /* SingleResult.swift */; };
+		21C2B72F1CE78B890092B008 /* Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6EF1CE78B890092B008 /* Sorting.swift */; };
+		21C2B7301CE78B890092B008 /* Updateable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6F01CE78B890092B008 /* Updateable.swift */; };
+		21C2B7311CE78B890092B008 /* UpdateBaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6F11CE78B890092B008 /* UpdateBaseHandler.swift */; };
+		21C2B7321CE78B890092B008 /* UpdateByFilterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6F21CE78B890092B008 /* UpdateByFilterHandler.swift */; };
+		21C2B7331CE78B890092B008 /* UpdateByIdHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6F31CE78B890092B008 /* UpdateByIdHandler.swift */; };
+		21C2B7341CE78B890092B008 /* UpdateField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6F41CE78B890092B008 /* UpdateField.swift */; };
+		21C2B7351CE78B890092B008 /* UpdateModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6F51CE78B890092B008 /* UpdateModifier.swift */; };
+		21C2B7361CE78B890092B008 /* UpdateObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6F61CE78B890092B008 /* UpdateObject.swift */; };
+		21C2B7371CE78B890092B008 /* UpdateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6F71CE78B890092B008 /* UpdateResult.swift */; };
+		21C2B7381CE78B890092B008 /* UploadFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6F81CE78B890092B008 /* UploadFileHandler.swift */; };
+		21C2B7391CE78B890092B008 /* UploadFileResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6F91CE78B890092B008 /* UploadFileResult.swift */; };
+		21C2B73A1CE78B890092B008 /* URLGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6FA1CE78B890092B008 /* URLGenerator.swift */; };
+		21C2B73B1CE78B890092B008 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6FB1CE78B890092B008 /* User.swift */; };
+		21C2B73C1CE78B890092B008 /* UserLoginMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6FC1CE78B890092B008 /* UserLoginMethod.swift */; };
+		21C2B73D1CE78B890092B008 /* UsersGenericHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6FD1CE78B890092B008 /* UsersGenericHandler.swift */; };
+		21C2B73E1CE78B890092B008 /* UsersHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6FE1CE78B890092B008 /* UsersHandler.swift */; };
+		21C2B73F1CE78B890092B008 /* ValueCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6FF1CE78B890092B008 /* ValueCondition.swift */; };
+		21C2B7401CE78B890092B008 /* MultipleExpandDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B7001CE78B890092B008 /* MultipleExpandDefinition.swift */; };
+		8B7F00197BC8C4BCA3F3A50A /* Pods_EverliveSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB37604E04C1C20D992EA09C /* Pods_EverliveSDK.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		21786B6E1CE78A4A00FDCB9E /* EverliveSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EverliveSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21786B711CE78A4A00FDCB9E /* EverliveSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EverliveSDK.h; sourceTree = "<group>"; };
+		21786B731CE78A4A00FDCB9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21C2B6C11CE78B890092B008 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
+		21C2B6C21CE78B890092B008 /* AlamofireExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireExtensions.swift; sourceTree = "<group>"; };
+		21C2B6C31CE78B890092B008 /* AuthenticationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationHandler.swift; sourceTree = "<group>"; };
+		21C2B6C41CE78B890092B008 /* BaseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHandler.swift; sourceTree = "<group>"; };
+		21C2B6C51CE78B890092B008 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		21C2B6C61CE78B890092B008 /* CreateBaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBaseResult.swift; sourceTree = "<group>"; };
+		21C2B6C71CE78B890092B008 /* CreateMultipleHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMultipleHandler.swift; sourceTree = "<group>"; };
+		21C2B6C81CE78B890092B008 /* CreateSingleHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSingleHandler.swift; sourceTree = "<group>"; };
+		21C2B6C91CE78B890092B008 /* DataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
+		21C2B6CA1CE78B890092B008 /* DataItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataItem.swift; sourceTree = "<group>"; };
+		21C2B6CB1CE78B890092B008 /* DataItemMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataItemMetadata.swift; sourceTree = "<group>"; };
+		21C2B6CC1CE78B890092B008 /* DeleteAll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteAll.swift; sourceTree = "<group>"; };
+		21C2B6CD1CE78B890092B008 /* DeleteByIdHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteByIdHandler.swift; sourceTree = "<group>"; };
+		21C2B6CE1CE78B890092B008 /* DeleteResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteResult.swift; sourceTree = "<group>"; };
+		21C2B6CF1CE78B890092B008 /* DownloadFileHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadFileHandler.swift; sourceTree = "<group>"; };
+		21C2B6D01CE78B890092B008 /* EverliveApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EverliveApp.swift; sourceTree = "<group>"; };
+		21C2B6D11CE78B890092B008 /* EverliveCompoundQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EverliveCompoundQuery.swift; sourceTree = "<group>"; };
+		21C2B6D21CE78B890092B008 /* EverliveConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EverliveConnection.swift; sourceTree = "<group>"; };
+		21C2B6D31CE78B890092B008 /* EverliveError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EverliveError.swift; sourceTree = "<group>"; };
+		21C2B6D41CE78B890092B008 /* EverliveQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EverliveQuery.swift; sourceTree = "<group>"; };
+		21C2B6D51CE78B890092B008 /* EverliveRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EverliveRequest.swift; sourceTree = "<group>"; };
+		21C2B6D61CE78B890092B008 /* EverliveResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EverliveResponse.swift; sourceTree = "<group>"; };
+		21C2B6D71CE78B890092B008 /* EVReflectionExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVReflectionExtensions.swift; sourceTree = "<group>"; };
+		21C2B6D81CE78B890092B008 /* ExpandDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandDefinition.swift; sourceTree = "<group>"; };
+		21C2B6D91CE78B890092B008 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		21C2B6DA1CE78B890092B008 /* FilesHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesHandler.swift; sourceTree = "<group>"; };
+		21C2B6DB1CE78B890092B008 /* FilterCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCondition.swift; sourceTree = "<group>"; };
+		21C2B6DC1CE78B890092B008 /* FilterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterProtocol.swift; sourceTree = "<group>"; };
+		21C2B6DD1CE78B890092B008 /* GenericRequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericRequestHandler.swift; sourceTree = "<group>"; };
+		21C2B6DE1CE78B890092B008 /* GenericResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericResult.swift; sourceTree = "<group>"; };
+		21C2B6DF1CE78B890092B008 /* GetAllHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAllHandler.swift; sourceTree = "<group>"; };
+		21C2B6E01CE78B890092B008 /* GetByFilterHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetByFilterHandler.swift; sourceTree = "<group>"; };
+		21C2B6E11CE78B890092B008 /* GetByIdHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetByIdHandler.swift; sourceTree = "<group>"; };
+		21C2B6E21CE78B890092B008 /* GetCountHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCountHandler.swift; sourceTree = "<group>"; };
+		21C2B6E31CE78B890092B008 /* LoginHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginHandler.swift; sourceTree = "<group>"; };
+		21C2B6E41CE78B890092B008 /* LoginMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginMethod.swift; sourceTree = "<group>"; };
+		21C2B6E51CE78B890092B008 /* LogoutHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutHandler.swift; sourceTree = "<group>"; };
+		21C2B6E61CE78B890092B008 /* MasterKeyLoginMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterKeyLoginMethod.swift; sourceTree = "<group>"; };
+		21C2B6E71CE78B890092B008 /* MultipleResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleResult.swift; sourceTree = "<group>"; };
+		21C2B6E81CE78B890092B008 /* Paging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paging.swift; sourceTree = "<group>"; };
+		21C2B6E91CE78B890092B008 /* PermissionsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsInfo.swift; sourceTree = "<group>"; };
+		21C2B6EA1CE78B890092B008 /* PropertyObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyObservable.swift; sourceTree = "<group>"; };
+		21C2B6EB1CE78B890092B008 /* QueryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryProtocol.swift; sourceTree = "<group>"; };
+		21C2B6EC1CE78B890092B008 /* RegexCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexCondition.swift; sourceTree = "<group>"; };
+		21C2B6ED1CE78B890092B008 /* ResultBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultBase.swift; sourceTree = "<group>"; };
+		21C2B6EE1CE78B890092B008 /* SingleResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleResult.swift; sourceTree = "<group>"; };
+		21C2B6EF1CE78B890092B008 /* Sorting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sorting.swift; sourceTree = "<group>"; };
+		21C2B6F01CE78B890092B008 /* Updateable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Updateable.swift; sourceTree = "<group>"; };
+		21C2B6F11CE78B890092B008 /* UpdateBaseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateBaseHandler.swift; sourceTree = "<group>"; };
+		21C2B6F21CE78B890092B008 /* UpdateByFilterHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateByFilterHandler.swift; sourceTree = "<group>"; };
+		21C2B6F31CE78B890092B008 /* UpdateByIdHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateByIdHandler.swift; sourceTree = "<group>"; };
+		21C2B6F41CE78B890092B008 /* UpdateField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateField.swift; sourceTree = "<group>"; };
+		21C2B6F51CE78B890092B008 /* UpdateModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateModifier.swift; sourceTree = "<group>"; };
+		21C2B6F61CE78B890092B008 /* UpdateObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateObject.swift; sourceTree = "<group>"; };
+		21C2B6F71CE78B890092B008 /* UpdateResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateResult.swift; sourceTree = "<group>"; };
+		21C2B6F81CE78B890092B008 /* UploadFileHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadFileHandler.swift; sourceTree = "<group>"; };
+		21C2B6F91CE78B890092B008 /* UploadFileResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadFileResult.swift; sourceTree = "<group>"; };
+		21C2B6FA1CE78B890092B008 /* URLGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLGenerator.swift; sourceTree = "<group>"; };
+		21C2B6FB1CE78B890092B008 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		21C2B6FC1CE78B890092B008 /* UserLoginMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginMethod.swift; sourceTree = "<group>"; };
+		21C2B6FD1CE78B890092B008 /* UsersGenericHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersGenericHandler.swift; sourceTree = "<group>"; };
+		21C2B6FE1CE78B890092B008 /* UsersHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersHandler.swift; sourceTree = "<group>"; };
+		21C2B6FF1CE78B890092B008 /* ValueCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueCondition.swift; sourceTree = "<group>"; };
+		21C2B7001CE78B890092B008 /* MultipleExpandDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleExpandDefinition.swift; sourceTree = "<group>"; };
+		3D2042BF1C03BFEEB8BD5B0E /* Pods-EverliveSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverliveSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EverliveSDK/Pods-EverliveSDK.debug.xcconfig"; sourceTree = "<group>"; };
+		DB37604E04C1C20D992EA09C /* Pods_EverliveSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverliveSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA1F89EEF73E682C4B04E4EA /* Pods-EverliveSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverliveSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-EverliveSDK/Pods-EverliveSDK.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21786B6A1CE78A4A00FDCB9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B7F00197BC8C4BCA3F3A50A /* Pods_EverliveSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		21786B641CE78A4A00FDCB9E = {
+			isa = PBXGroup;
+			children = (
+				21786B701CE78A4A00FDCB9E /* EverliveSDK */,
+				21786B6F1CE78A4A00FDCB9E /* Products */,
+				42E766FAE2BD65C0582BA07A /* Pods */,
+				AF6EDA15B6EB5521BF9B3AC6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		21786B6F1CE78A4A00FDCB9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21786B6E1CE78A4A00FDCB9E /* EverliveSDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		21786B701CE78A4A00FDCB9E /* EverliveSDK */ = {
+			isa = PBXGroup;
+			children = (
+				21C2B6C11CE78B890092B008 /* AccessToken.swift */,
+				21C2B6C21CE78B890092B008 /* AlamofireExtensions.swift */,
+				21C2B6C31CE78B890092B008 /* AuthenticationHandler.swift */,
+				21C2B6C41CE78B890092B008 /* BaseHandler.swift */,
+				21C2B6C51CE78B890092B008 /* Constants.swift */,
+				21C2B6C61CE78B890092B008 /* CreateBaseResult.swift */,
+				21C2B6C71CE78B890092B008 /* CreateMultipleHandler.swift */,
+				21C2B6C81CE78B890092B008 /* CreateSingleHandler.swift */,
+				21C2B6C91CE78B890092B008 /* DataHandler.swift */,
+				21C2B6CA1CE78B890092B008 /* DataItem.swift */,
+				21C2B6CB1CE78B890092B008 /* DataItemMetadata.swift */,
+				21C2B6CC1CE78B890092B008 /* DeleteAll.swift */,
+				21C2B6CD1CE78B890092B008 /* DeleteByIdHandler.swift */,
+				21C2B6CE1CE78B890092B008 /* DeleteResult.swift */,
+				21C2B6CF1CE78B890092B008 /* DownloadFileHandler.swift */,
+				21C2B6D01CE78B890092B008 /* EverliveApp.swift */,
+				21C2B6D11CE78B890092B008 /* EverliveCompoundQuery.swift */,
+				21C2B6D21CE78B890092B008 /* EverliveConnection.swift */,
+				21C2B6D31CE78B890092B008 /* EverliveError.swift */,
+				21C2B6D41CE78B890092B008 /* EverliveQuery.swift */,
+				21C2B6D51CE78B890092B008 /* EverliveRequest.swift */,
+				21C2B6D61CE78B890092B008 /* EverliveResponse.swift */,
+				21C2B6D71CE78B890092B008 /* EVReflectionExtensions.swift */,
+				21C2B6D81CE78B890092B008 /* ExpandDefinition.swift */,
+				21C2B6D91CE78B890092B008 /* File.swift */,
+				21C2B6DA1CE78B890092B008 /* FilesHandler.swift */,
+				21C2B6DB1CE78B890092B008 /* FilterCondition.swift */,
+				21C2B6DC1CE78B890092B008 /* FilterProtocol.swift */,
+				21C2B6DD1CE78B890092B008 /* GenericRequestHandler.swift */,
+				21C2B6DE1CE78B890092B008 /* GenericResult.swift */,
+				21C2B6DF1CE78B890092B008 /* GetAllHandler.swift */,
+				21C2B6E01CE78B890092B008 /* GetByFilterHandler.swift */,
+				21C2B6E11CE78B890092B008 /* GetByIdHandler.swift */,
+				21C2B6E21CE78B890092B008 /* GetCountHandler.swift */,
+				21C2B6E31CE78B890092B008 /* LoginHandler.swift */,
+				21C2B6E41CE78B890092B008 /* LoginMethod.swift */,
+				21C2B6E51CE78B890092B008 /* LogoutHandler.swift */,
+				21C2B6E61CE78B890092B008 /* MasterKeyLoginMethod.swift */,
+				21C2B6E71CE78B890092B008 /* MultipleResult.swift */,
+				21C2B6E81CE78B890092B008 /* Paging.swift */,
+				21C2B6E91CE78B890092B008 /* PermissionsInfo.swift */,
+				21C2B6EA1CE78B890092B008 /* PropertyObservable.swift */,
+				21C2B6EB1CE78B890092B008 /* QueryProtocol.swift */,
+				21C2B6EC1CE78B890092B008 /* RegexCondition.swift */,
+				21C2B6ED1CE78B890092B008 /* ResultBase.swift */,
+				21C2B6EE1CE78B890092B008 /* SingleResult.swift */,
+				21C2B6EF1CE78B890092B008 /* Sorting.swift */,
+				21C2B6F01CE78B890092B008 /* Updateable.swift */,
+				21C2B6F11CE78B890092B008 /* UpdateBaseHandler.swift */,
+				21C2B6F21CE78B890092B008 /* UpdateByFilterHandler.swift */,
+				21C2B6F31CE78B890092B008 /* UpdateByIdHandler.swift */,
+				21C2B6F41CE78B890092B008 /* UpdateField.swift */,
+				21C2B6F51CE78B890092B008 /* UpdateModifier.swift */,
+				21C2B6F61CE78B890092B008 /* UpdateObject.swift */,
+				21C2B6F71CE78B890092B008 /* UpdateResult.swift */,
+				21C2B6F81CE78B890092B008 /* UploadFileHandler.swift */,
+				21C2B6F91CE78B890092B008 /* UploadFileResult.swift */,
+				21C2B6FA1CE78B890092B008 /* URLGenerator.swift */,
+				21C2B6FB1CE78B890092B008 /* User.swift */,
+				21C2B6FC1CE78B890092B008 /* UserLoginMethod.swift */,
+				21C2B6FD1CE78B890092B008 /* UsersGenericHandler.swift */,
+				21C2B6FE1CE78B890092B008 /* UsersHandler.swift */,
+				21C2B6FF1CE78B890092B008 /* ValueCondition.swift */,
+				21C2B7001CE78B890092B008 /* MultipleExpandDefinition.swift */,
+				21786B711CE78A4A00FDCB9E /* EverliveSDK.h */,
+				21786B731CE78A4A00FDCB9E /* Info.plist */,
+			);
+			path = EverliveSDK;
+			sourceTree = "<group>";
+		};
+		42E766FAE2BD65C0582BA07A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D2042BF1C03BFEEB8BD5B0E /* Pods-EverliveSDK.debug.xcconfig */,
+				FA1F89EEF73E682C4B04E4EA /* Pods-EverliveSDK.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AF6EDA15B6EB5521BF9B3AC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB37604E04C1C20D992EA09C /* Pods_EverliveSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		21786B6B1CE78A4A00FDCB9E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21786B721CE78A4A00FDCB9E /* EverliveSDK.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		21786B6D1CE78A4A00FDCB9E /* EverliveSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21786B761CE78A4A00FDCB9E /* Build configuration list for PBXNativeTarget "EverliveSDK" */;
+			buildPhases = (
+				DDD1417D0D1B87FD071BC32A /* 📦 Check Pods Manifest.lock */,
+				21786B691CE78A4A00FDCB9E /* Sources */,
+				21786B6A1CE78A4A00FDCB9E /* Frameworks */,
+				21786B6B1CE78A4A00FDCB9E /* Headers */,
+				21786B6C1CE78A4A00FDCB9E /* Resources */,
+				6284AABB0FC2214FCB935E0C /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EverliveSDK;
+			productName = EverliveSDK;
+			productReference = 21786B6E1CE78A4A00FDCB9E /* EverliveSDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		21786B651CE78A4A00FDCB9E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Dimitar Dimitrov";
+				TargetAttributes = {
+					21786B6D1CE78A4A00FDCB9E = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 21786B681CE78A4A00FDCB9E /* Build configuration list for PBXProject "EverliveSDK" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 21786B641CE78A4A00FDCB9E;
+			productRefGroup = 21786B6F1CE78A4A00FDCB9E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				21786B6D1CE78A4A00FDCB9E /* EverliveSDK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		21786B6C1CE78A4A00FDCB9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6284AABB0FC2214FCB935E0C /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EverliveSDK/Pods-EverliveSDK-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDD1417D0D1B87FD071BC32A /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		21786B691CE78A4A00FDCB9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21C2B71B1CE78B890092B008 /* FilterCondition.swift in Sources */,
+				21C2B7191CE78B890092B008 /* File.swift in Sources */,
+				21C2B70A1CE78B890092B008 /* DataItem.swift in Sources */,
+				21C2B7111CE78B890092B008 /* EverliveCompoundQuery.swift in Sources */,
+				21C2B7351CE78B890092B008 /* UpdateModifier.swift in Sources */,
+				21C2B7211CE78B890092B008 /* GetByIdHandler.swift in Sources */,
+				21C2B7181CE78B890092B008 /* ExpandDefinition.swift in Sources */,
+				21C2B7141CE78B890092B008 /* EverliveQuery.swift in Sources */,
+				21C2B7251CE78B890092B008 /* LogoutHandler.swift in Sources */,
+				21C2B7271CE78B890092B008 /* MultipleResult.swift in Sources */,
+				21C2B72C1CE78B890092B008 /* RegexCondition.swift in Sources */,
+				21C2B7261CE78B890092B008 /* MasterKeyLoginMethod.swift in Sources */,
+				21C2B7081CE78B890092B008 /* CreateSingleHandler.swift in Sources */,
+				21C2B73C1CE78B890092B008 /* UserLoginMethod.swift in Sources */,
+				21C2B73F1CE78B890092B008 /* ValueCondition.swift in Sources */,
+				21C2B72E1CE78B890092B008 /* SingleResult.swift in Sources */,
+				21C2B70C1CE78B890092B008 /* DeleteAll.swift in Sources */,
+				21C2B7311CE78B890092B008 /* UpdateBaseHandler.swift in Sources */,
+				21C2B72F1CE78B890092B008 /* Sorting.swift in Sources */,
+				21C2B7051CE78B890092B008 /* Constants.swift in Sources */,
+				21C2B7021CE78B890092B008 /* AlamofireExtensions.swift in Sources */,
+				21C2B71F1CE78B890092B008 /* GetAllHandler.swift in Sources */,
+				21C2B73E1CE78B890092B008 /* UsersHandler.swift in Sources */,
+				21C2B71E1CE78B890092B008 /* GenericResult.swift in Sources */,
+				21C2B7221CE78B890092B008 /* GetCountHandler.swift in Sources */,
+				21C2B7131CE78B890092B008 /* EverliveError.swift in Sources */,
+				21C2B71A1CE78B890092B008 /* FilesHandler.swift in Sources */,
+				21C2B7151CE78B890092B008 /* EverliveRequest.swift in Sources */,
+				21C2B73B1CE78B890092B008 /* User.swift in Sources */,
+				21C2B7041CE78B890092B008 /* BaseHandler.swift in Sources */,
+				21C2B7281CE78B890092B008 /* Paging.swift in Sources */,
+				21C2B7361CE78B890092B008 /* UpdateObject.swift in Sources */,
+				21C2B7241CE78B890092B008 /* LoginMethod.swift in Sources */,
+				21C2B70B1CE78B890092B008 /* DataItemMetadata.swift in Sources */,
+				21C2B70E1CE78B890092B008 /* DeleteResult.swift in Sources */,
+				21C2B7291CE78B890092B008 /* PermissionsInfo.swift in Sources */,
+				21C2B7201CE78B890092B008 /* GetByFilterHandler.swift in Sources */,
+				21C2B71D1CE78B890092B008 /* GenericRequestHandler.swift in Sources */,
+				21C2B73D1CE78B890092B008 /* UsersGenericHandler.swift in Sources */,
+				21C2B7321CE78B890092B008 /* UpdateByFilterHandler.swift in Sources */,
+				21C2B7161CE78B890092B008 /* EverliveResponse.swift in Sources */,
+				21C2B7091CE78B890092B008 /* DataHandler.swift in Sources */,
+				21C2B7381CE78B890092B008 /* UploadFileHandler.swift in Sources */,
+				21C2B7391CE78B890092B008 /* UploadFileResult.swift in Sources */,
+				21C2B7231CE78B890092B008 /* LoginHandler.swift in Sources */,
+				21C2B7301CE78B890092B008 /* Updateable.swift in Sources */,
+				21C2B7401CE78B890092B008 /* MultipleExpandDefinition.swift in Sources */,
+				21C2B70F1CE78B890092B008 /* DownloadFileHandler.swift in Sources */,
+				21C2B7121CE78B890092B008 /* EverliveConnection.swift in Sources */,
+				21C2B7341CE78B890092B008 /* UpdateField.swift in Sources */,
+				21C2B7371CE78B890092B008 /* UpdateResult.swift in Sources */,
+				21C2B7071CE78B890092B008 /* CreateMultipleHandler.swift in Sources */,
+				21C2B72D1CE78B890092B008 /* ResultBase.swift in Sources */,
+				21C2B73A1CE78B890092B008 /* URLGenerator.swift in Sources */,
+				21C2B70D1CE78B890092B008 /* DeleteByIdHandler.swift in Sources */,
+				21C2B7031CE78B890092B008 /* AuthenticationHandler.swift in Sources */,
+				21C2B7011CE78B890092B008 /* AccessToken.swift in Sources */,
+				21C2B72B1CE78B890092B008 /* QueryProtocol.swift in Sources */,
+				21C2B72A1CE78B890092B008 /* PropertyObservable.swift in Sources */,
+				21C2B7061CE78B890092B008 /* CreateBaseResult.swift in Sources */,
+				21C2B7171CE78B890092B008 /* EVReflectionExtensions.swift in Sources */,
+				21C2B7101CE78B890092B008 /* EverliveApp.swift in Sources */,
+				21C2B7331CE78B890092B008 /* UpdateByIdHandler.swift in Sources */,
+				21C2B71C1CE78B890092B008 /* FilterProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		21786B741CE78A4A00FDCB9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		21786B751CE78A4A00FDCB9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		21786B771CE78A4A00FDCB9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D2042BF1C03BFEEB8BD5B0E /* Pods-EverliveSDK.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = EverliveSDK/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddimitrov.EverliveSDK;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		21786B781CE78A4A00FDCB9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA1F89EEF73E682C4B04E4EA /* Pods-EverliveSDK.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = EverliveSDK/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddimitrov.EverliveSDK;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21786B681CE78A4A00FDCB9E /* Build configuration list for PBXProject "EverliveSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21786B741CE78A4A00FDCB9E /* Debug */,
+				21786B751CE78A4A00FDCB9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21786B761CE78A4A00FDCB9E /* Build configuration list for PBXNativeTarget "EverliveSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21786B771CE78A4A00FDCB9E /* Debug */,
+				21786B781CE78A4A00FDCB9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 21786B651CE78A4A00FDCB9E /* Project object */;
+}
