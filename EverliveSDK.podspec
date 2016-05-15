@@ -21,14 +21,14 @@ s.author = { "[Dimitar Dimitrov]" => "[m1tkoregs@gmail.com]" }
 
 
 # 5 - Replace this URL with your own Github page's URL (from the address bar)
-s.homepage = "[https://github.com/ddimitrov90/EverliveSDK]"
+s.homepage = "https://github.com/ddimitrov90/EverliveSDK"
 
 # For example,
 # s.homepage = "http://ddimitrov.net"
 
 
 # 6 - Replace this URL with your own Git URL from "Quick Setup"
-s.source = { :git => "[https://github.com/ddimitrov90/EverliveSDK]", :tag => "#{s.version}"}
+s.source = { :git => "https://github.com/ddimitrov90/EverliveSDK.git", :tag => "#{s.version}"}
 
 # For example,
 # s.source = { :git => "https://github.com/ddimitrov90/EverliveSDK.git", :tag => "#{s.version}"}

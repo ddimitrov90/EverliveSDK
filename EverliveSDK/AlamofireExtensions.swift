@@ -53,8 +53,7 @@ extension Alamofire.Request {
                     switch response.result {
                     case .Success(let json):
                         let t = T()
-                        let jsonDict = EVReflection.dictionaryFromJson(json as? String)
-                        EVReflection.setPropertiesfromDictionary(jsonDict, anyObject: t)
+                        EVReflection.setPropertiesfromDictionary(json as! NSDictionary, anyObject: t)
                             completionHandler(self.request, self.response, Result.Success(t))
                     case .Failure(let error):
                         completionHandler(self.request, self.response, Result.Failure(error ?? NSError(domain: "NaN", code: 1, userInfo: nil)))
