@@ -60,6 +60,10 @@ public class DataItem: EVObject, PropertyObservable, Updateable {
         return [("propertyChanged",nil), ("changedProperties", nil), ("isDirty",nil), ("customProperties",nil)]
     }
     
+    public func getSkippedProperties() -> Set<String> {
+        return Set()
+    }
+    
     var changedProperties: Set<String> = Set<String>()
     var isDirty: Bool = false
     

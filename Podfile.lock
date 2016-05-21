@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (3.4.0)
-  - EVReflection (2.30.1)
+  - EVReflection (2.33.0)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
@@ -10,7 +10,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
-  EVReflection: cbadc6ef7c077d86efc1a47fa23f1c9d0a5540dc
+  EVReflection: 1429d7bcd9948f5accb2dad383642480bc17e05e
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
 PODFILE CHECKSUM: 8ce573f42557fc8134c769974f392d8e15509b56

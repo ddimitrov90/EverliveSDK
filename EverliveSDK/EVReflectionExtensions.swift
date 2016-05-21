@@ -13,6 +13,8 @@ extension EVReflection {
     public class func prepareCreateObjectString(theObject: NSObject, performKeyCleanup:Bool = true) -> String {
         var (dict,_) = EVReflection.toDictionary(theObject)
         dict = fixPropertyNames(dict)
+        let skippedProps: Set<String> = ((theObject as? DataItem)?.getSkippedProperties())!
+        dict = removeSkippedProperties(dict, skippedProps: skippedProps)
         dict = convertDictionaryForJsonSerialization(dict)
         var result: String = ""
         do {
@@ -27,6 +29,8 @@ extension EVReflection {
     public class func prepareUpdateObjectString(theObject: NSObject, changedProperties: Set<String>, performKeyCleanup:Bool = true) -> NSDictionary {
         var (dict,_) = EVReflection.toDictionary(theObject)
         dict = removeNonModifiedProps(dict, changedProps: changedProperties)
+        let skippedProps: Set<String> = ((theObject as? DataItem)?.getSkippedProperties())!
+        dict = removeSkippedProperties(dict, skippedProps: skippedProps)
         dict = convertDictionaryForJsonSerialization(dict)
         return dict
     }
@@ -38,6 +42,16 @@ extension EVReflection {
                 var newKey: String = key as! String;
                 newKey.replaceRange(newKey.startIndex...newKey.startIndex, with: String(newKey[newKey.startIndex]).capitalizedString)
                 newProperties[newKey] = dict[key as! String]
+            }
+        }
+        return newProperties
+    }
+    
+    private class func removeSkippedProperties(dict: NSDictionary, skippedProps: Set<String>) -> NSDictionary {
+        let newProperties = NSMutableDictionary()
+        for (key, _) in dict {
+            if((skippedProps.indexOf(key as! String)) == nil){
+                newProperties[key as! String] = dict[key as! String]
             }
         }
         return newProperties
