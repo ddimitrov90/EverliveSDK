@@ -18,6 +18,7 @@ public class EverliveApp {
         self.appId = appId
         self.connection = EverliveConnection(appId: self.appId, baseUrl: self._apiServerUrl, apiVersion: self._apiVersion)
         EVReflection.setBundleIdentifier(EverliveApp.self)
+        ConversionOptions.DefaultNSCoding = [.PropertyMapping]
     }
     
     public func Data<T>() -> DataHandler<T>{
