@@ -22,6 +22,13 @@ public class EverliveConnection {
         self.apiVersion = apiVersion
     }
     
+    public func executeRequest(request:EverliveRequest, completionHandler: Response<AnyObject, NSError> -> Void) -> Void {
+        let customRequest = self.prepareRequest(request)
+        Alamofire.request(customRequest).responseJSON { response in
+            completionHandler(response)
+        }
+    }
+    
     func executeRequest<T : ResultBase> (request: EverliveRequest, completionHandler: (Result<T, NSError>) -> Void) -> Void {
         let req = self.prepareRequest(request)
         Alamofire.request(req).responseObject(completionHandler)

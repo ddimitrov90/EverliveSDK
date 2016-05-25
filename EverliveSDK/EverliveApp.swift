@@ -11,7 +11,7 @@ import EVReflection
 
 public class EverliveApp {
     var appId: String
-    var connection: EverliveConnection
+    public private(set) var connection: EverliveConnection
     
     
     required public init(appId: String) {

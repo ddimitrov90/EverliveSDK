@@ -91,6 +91,7 @@ public class EverliveRequest {
     
     public func prepareRequest() -> NSMutableURLRequest {
         let url = NSURL(string: self.url);
+        
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = self.method
         

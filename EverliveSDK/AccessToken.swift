@@ -9,6 +9,7 @@
 import Foundation
 import EVReflection
 
+@objc(AccessToken)
 public class AccessToken : DataItem {
     public var Token:String = ""
     public var TokenType: String = "bearer"
