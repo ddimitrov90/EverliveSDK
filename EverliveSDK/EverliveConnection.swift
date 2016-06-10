@@ -70,7 +70,6 @@ public class EverliveConnection {
     
     func getAccessTokenFromDefaults() {
         let defaults = NSUserDefaults.standardUserDefaults()
-        let ac = AccessToken()
         if let data = defaults.objectForKey("everlive_access_token") as? NSData {
             let accessToken = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? AccessToken
             self.accessToken = accessToken

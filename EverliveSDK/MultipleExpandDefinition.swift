@@ -19,7 +19,7 @@ public class MultipleExpandDefinition: QueryProtocol {
     
     public func getJson() -> String {
         let jsonObj = self.getJsonObj()
-        var result = jsonObj.rawString(NSUTF8StringEncoding, options: NSJSONWritingOptions(rawValue: 0))!
+        let result = jsonObj.rawString(NSUTF8StringEncoding, options: NSJSONWritingOptions(rawValue: 0))!
         return result
         /*
         var test2:[String:AnyObject] = [:]

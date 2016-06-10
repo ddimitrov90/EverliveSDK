@@ -44,7 +44,7 @@ public class ExpandDefinition : QueryProtocol {
         expandDefinitionObject["TargetTypeName"] = self.TargetTypeName
         
         if let childExpand = self.ChildExpand {
-            try expandDefinitionObject["Expand"] = [ childExpand.relationField : childExpand.prepareDefinitionObject()]
+            expandDefinitionObject["Expand"] = [ childExpand.relationField : childExpand.prepareDefinitionObject()]
         }
         
         if let sort = self.Sort {
