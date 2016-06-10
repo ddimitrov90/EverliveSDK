@@ -25,7 +25,7 @@ public class EverliveApp {
         return DataHandler<T>(connection: self.connection)
     }
     
-    public func Users() -> UsersHandler {
+    public func Users<T>() -> UsersHandler<T> {
         return UsersHandler(connection: self.connection)
     }
     

@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-public class UsersHandler : DataHandler<User> {
+public class UsersHandler<T:User> : DataHandler<T> {
     override init(connection: EverliveConnection){
         super.init(connection: connection)
     }
