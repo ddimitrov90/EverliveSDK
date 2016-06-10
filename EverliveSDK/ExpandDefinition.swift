@@ -8,10 +8,16 @@
 
 import Foundation
 import SwiftyJSON
+import EVReflection
 
 public class ExpandDefinition : QueryProtocol {
     var relationField: String
-    var returnAs: String
+    var ReturnAs: String
+    public var TargetTypeName: String?
+    
+    public var ChildExpand: ExpandDefinition?
+    public var Sort: Sorting?
+    //public var Filter: QueryProtocol?
     
     convenience public init(relationField: String){
         self.init(relationField: relationField, returnAs: relationField)
@@ -19,7 +25,7 @@ public class ExpandDefinition : QueryProtocol {
     
     required public init(relationField: String, returnAs: String){
         self.relationField = relationField
-        self.returnAs = returnAs
+        self.ReturnAs = returnAs
     }
     
     public func getJson() -> String {
@@ -32,9 +38,24 @@ public class ExpandDefinition : QueryProtocol {
         return JSON(expandHeader)
     }
     
-    internal func prepareDefinitionObject() -> [String: String] {
-        var expandDefinitionObject:[String:String] = [:]
-        expandDefinitionObject["ReturnAs"] = self.returnAs
+    internal func prepareDefinitionObject() -> [String: AnyObject] {
+        var expandDefinitionObject:[String:AnyObject] = [:]
+        expandDefinitionObject["ReturnAs"] = self.ReturnAs
+        expandDefinitionObject["TargetTypeName"] = self.TargetTypeName
+        
+        if let childExpand = self.ChildExpand {
+            try expandDefinitionObject["Expand"] = [ childExpand.relationField : childExpand.prepareDefinitionObject()]
+        }
+        
+        if let sort = self.Sort {
+            expandDefinitionObject["Sort"] = sort.sortFields
+        }
+        
+        //if let filter = self.Filter {
+        //     expandDefinitionObject["Filter"] = filter.getJson()
+        //}
+        
         return expandDefinitionObject
     }
+    
 }
