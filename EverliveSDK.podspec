@@ -4,11 +4,11 @@ Pod::Spec.new do |s|
 s.platform = :ios
 s.ios.deployment_target = '9.0'
 s.name = "EverliveSDK"
-s.summary = "EverliverSDK lets you take advantage of telerik backend services in your native app."
+s.summary = "EverliverSDK lets you take advantage of the features of Progress Backend Services (formerly known as Everlive) when building native applications using Swift."
 s.requires_arc = true
 
 # 2
-s.version = "0.1.0"
+s.version = "1.0.0"
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE" }
@@ -17,7 +17,7 @@ s.license = { :type => "MIT", :file => "LICENSE" }
 s.author = { "[Dimitar Dimitrov]" => "[m1tkoregs@gmail.com]" }
 
 # For example,
-# s.author = { "Joshua Greene" => "jrg.developer@gmail.com" }
+# s.author = { "Dimitar Dimitrov" => "m1tkoregs@gmail.com" }
 
 
 # 5 - Replace this URL with your own Github page's URL (from the address bar)
@@ -38,7 +38,7 @@ s.source = { :git => "https://github.com/ddimitrov90/EverliveSDK.git", :tag => "
 s.framework = "UIKit"
 s.dependency 'Alamofire', '~> 3.0'
 s.dependency 'EVReflection', '~> 2.6'
-s.dependency 'SwiftyJSON', '~> 2.3.2'
+s.dependency 'SwiftyJSON', '~> 2.3.1'
 
 # 8
 s.source_files = "EverliveSDK/**/*.{swift}"
