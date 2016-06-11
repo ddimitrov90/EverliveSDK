@@ -20,7 +20,7 @@ There is a sample application that demonstrates all features in a real case scen
 
 The SDK itself does not have any specific requirements, so all the required versions come from the used libraries in it.
 
-- iOS 8.0+ / Mac OS X 10.9+ / tvOS 9.0+ / watchOS 2.0+
+- iOS 9.0+ / Mac OS X 10.9+ / tvOS 9.0+ / watchOS 2.0+
 - Xcode 7.3+
 
 ## Installation
