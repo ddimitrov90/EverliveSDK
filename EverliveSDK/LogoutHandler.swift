@@ -22,10 +22,7 @@ public class LogoutHandler {
         self.connection.executeRequest(loginRequest) { (response: Result<SingleResult<DataItem>, NSError>) -> Void in
             if let result = response.value {
                 if result.data == nil {
-                    self.connection.accessToken = nil
-                    let defaults = NSUserDefaults.standardUserDefaults()
-                    defaults.removeObjectForKey("everlive_access_token")
-                    defaults.synchronize()
+                    self.connection.clearAccessToken()
                 }
                 completionHandler(true, result.getErrorObject())
             }

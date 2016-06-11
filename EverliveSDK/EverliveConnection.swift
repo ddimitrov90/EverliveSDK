@@ -15,11 +15,13 @@ public class EverliveConnection {
     var baseUrl: String
     var apiVersion: String
     var accessToken: AccessToken?
+    private var tokenKey: String
     
     init(appId: String, baseUrl: String, apiVersion: String){
         self.appId = appId
         self.baseUrl = baseUrl
         self.apiVersion = apiVersion
+        self.tokenKey = "\(self.appId):everlive_access_token"
     }
     
     public func executeRequest(request:EverliveRequest, completionHandler: Response<AnyObject, NSError> -> Void) -> Void {
@@ -70,10 +72,32 @@ public class EverliveConnection {
     
     func getAccessTokenFromDefaults() {
         let defaults = NSUserDefaults.standardUserDefaults()
-        if let data = defaults.objectForKey("everlive_access_token") as? NSData {
-            let accessToken = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? AccessToken
+        if let data = defaults.objectForKey(self.tokenKey) as? NSData {
+            let tokenDict = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [String:AnyObject]
+            var accessToken = AccessToken(dictionary: tokenDict!)
             self.accessToken = accessToken
         }
+    }
+    
+    func saveAccessToken(token: AccessToken){
+        self.accessToken = token
+        var tokenDict:[String:AnyObject] = [:]
+        tokenDict["Token"] = self.accessToken?.Token
+        tokenDict["ExpirationDate"] = self.accessToken?.ExpirationDate
+        tokenDict["PrincipalId"] = self.accessToken?.PrincipalId
+        tokenDict["TokenType"] = self.accessToken?.TokenType
+        
+        let tokenData:NSData = NSKeyedArchiver.archivedDataWithRootObject(tokenDict)
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(tokenData, forKey: self.tokenKey)
+        defaults.synchronize()
+    }
+    
+    func clearAccessToken(){
+        self.accessToken = nil
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.removeObjectForKey(self.tokenKey)
+        defaults.synchronize()
     }
     
     private func prepareUrl(url: String) -> String {
@@ -95,7 +119,6 @@ public class EverliveConnection {
         
         let nsRequest = evRequest.prepareRequest()
         return nsRequest
-        
     }
     
 }

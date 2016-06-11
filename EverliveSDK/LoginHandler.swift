@@ -25,11 +25,7 @@ public class LoginHandler {
         self.connection.executeRequest(loginRequest) { (response: Result<SingleResult<AccessToken>, NSError>) -> Void in
             if let result = response.value {
                 if let token = result.data {
-                    self.connection.accessToken = token
-                    let tokenData:NSData = NSKeyedArchiver.archivedDataWithRootObject(token)
-                    let defaults = NSUserDefaults.standardUserDefaults()
-                    defaults.setObject(tokenData, forKey: "everlive_access_token")
-                    defaults.synchronize()
+                    self.connection.saveAccessToken(token)
                 }
                 completionHandler(result.data, result.getErrorObject())
             }
