@@ -65,7 +65,7 @@ final public class EVReflection {
                     let mapping = keyMapping[k as? String ?? ""]
                     let useKey: String = (mapping ?? k ?? "") as? String ?? ""
                     let original: NSObject? = getValue(anyObject, key: useKey)
-                    let (dictValue, valid) = dictionaryAndArrayConversion(anyObject, key: k as? String ?? "", fieldType: types[useKey] as? String, original: original, theDictValue: v, conversionOptions: conversionOptions)
+                    let (dictValue, valid) = dictionaryAndArrayConversion(anyObject, key: k as? String ?? "", fieldType: types[k as? String ?? ""] as? String ?? types[useKey] as? String, original: original, theDictValue: v, conversionOptions: conversionOptions)
                     if dictValue != nil {
                         if let key: String = keyMapping[k as? String ?? ""] as? String {
                             setObjectValue(anyObject, key: key, theValue: (valid ? dictValue: v), typeInObject: types[key] as? String, valid: valid, conversionOptions: conversionOptions)
@@ -287,7 +287,7 @@ final public class EVReflection {
      - returns: the hashvalue for the object
      */
     public class func hashValue(theObject: NSObject) -> Int {
-        let (hasKeys, _) = toDictionary(theObject, conversionOptions: .None)
+        let (hasKeys, _) = toDictionary(theObject, conversionOptions: .DefaultComparing)
         return Int(hasKeys.map {$1}.reduce(0) {(31 &* $0) &+ $1.hash})
     }
     
@@ -299,7 +299,7 @@ final public class EVReflection {
      - parameter aCoder: The NSCoder that will be used for encoding the object.
      - parameter conversionOptions: Option set for the various conversion options.
      */
-    public class func encodeWithCoder(theObject: EVObject, aCoder: NSCoder, conversionOptions: ConversionOptions = .None) {
+    public class func encodeWithCoder(theObject: EVObject, aCoder: NSCoder, conversionOptions: ConversionOptions = .DefaultNSCoding) {
         let (hasKeys, _) = toDictionary(theObject, conversionOptions: conversionOptions)
         for (key, value) in hasKeys {
             aCoder.encodeObject(value, forKey: key as? String ?? "")
@@ -313,7 +313,7 @@ final public class EVReflection {
      - parameter aDecoder: The NSCoder that will be used for decoding the object.
      - parameter conversionOptions: Option set for the various conversion options.
      */
-    public class func decodeObjectWithCoder(theObject: EVObject, aDecoder: NSCoder, conversionOptions: ConversionOptions = .None) {
+    public class func decodeObjectWithCoder(theObject: EVObject, aDecoder: NSCoder, conversionOptions: ConversionOptions = .DefaultNSCoding) {
         let (hasKeys, _) = toDictionary(theObject, conversionOptions: conversionOptions, isCachable: true)
         let dict = NSMutableDictionary()
         for (key, _) in hasKeys {
@@ -340,8 +340,8 @@ final public class EVReflection {
             return false
         }
         
-        let (lhsdict, _) = toDictionary(lhs, conversionOptions: .None)
-        let (rhsdict, _) = toDictionary(rhs, conversionOptions: .None)
+        let (lhsdict, _) = toDictionary(lhs, conversionOptions: .DefaultComparing)
+        let (rhsdict, _) = toDictionary(rhs, conversionOptions: .DefaultComparing)
         
         return dictionariesAreEqual(lhsdict, rhsdict: rhsdict)
     }
@@ -662,7 +662,8 @@ final public class EVReflection {
             if valueType.containsString("<") {
                 return (theValue as! NSObject, swiftStringFromClass(theValue as! NSObject), true)
             }
-            return (theValue as! NSObject, valueType, true)
+            // isObject is false to prevent parsing of objects like CKRecord, CKRecordId and other objects.
+            return (theValue as! NSObject, valueType, false)
         }
         (parentObject as? EVObject)?.addStatusMessage(.InvalidType, message: "valueForAny unkown type \(valueType) for value: \(theValue).")
         print("ERROR: valueForAny unkown type \(valueType) for value: \(theValue).")
@@ -913,15 +914,22 @@ final public class EVReflection {
             if type.hasPrefix("Array<") && dictValue as? NSDictionary != nil {
                 if (dictValue as? NSDictionary)?.count == 1 {
                     // XMLDictionary fix
-                    if let i = (dictValue as? NSDictionary)?.generate().next()?.value as? NSArray {
-                        dictValue = i
+                    let onlyElement = (dictValue as? NSDictionary)?.generate().next()
+                    let t: String = (onlyElement?.key as? String) ?? ""
+                    if onlyElement?.value as? NSArray != nil && type.lowercaseString == "array<\(t)>" {
+                        dictValue = onlyElement?.value as? NSArray
                         dictValue = dictArrayToObjectArray(type, array: (dictValue as? [NSDictionary]) ?? [NSDictionary](), conversionOptions: conversionOptions) as NSArray
+                    } else {
+                        // Single object array fix
+                        var array: [NSDictionary] = [NSDictionary]()
+                        array.append(dictValue as? NSDictionary ?? NSDictionary())
+                        dictValue = dictArrayToObjectArray(type, array: array, conversionOptions: conversionOptions) as NSArray
                     }
                 } else {
                     // Single object array fix
                     var array: [NSDictionary] = [NSDictionary]()
                     array.append(dictValue as? NSDictionary ?? NSDictionary())
-                    dictValue = array
+                    dictValue = dictArrayToObjectArray(type, array: array, conversionOptions: conversionOptions) as NSArray
                 }
             } else if let _ = type.rangeOfString("_NativeDictionaryStorageOwner"), let dict = dictValue as? NSDictionary, let org = anyObject as? EVDictionaryConvertable {
                 dictValue = org.convertDictionary(key, dict: dict)
@@ -1180,19 +1188,42 @@ final public class EVReflection {
 
 
 
+/**
+ For specifying what conversion options should be executed
+ */
 public struct ConversionOptions: OptionSetType, CustomStringConvertible {
+    /// The numeric representation of the options
     public let rawValue: Int
+    /**
+     Initialize with a raw value
+     
+     - parameter rawValue: the numeric representation
+     
+     - returns: The ConversionOptions
+     */
     public init(rawValue: Int) { self.rawValue = rawValue }
     
+    /// No conversion options
     public static let None = ConversionOptions(rawValue: 0)
+    /// Execute property converters
     public static let PropertyConverter = ConversionOptions(rawValue: 1)
+    /// Execute property mapping
     public static let PropertyMapping = ConversionOptions(rawValue: 2)
+    /// Skip specific property values
     public static let SkipPropertyValue = ConversionOptions(rawValue: 4)
+    /// Do a key cleanup (CameCase, snake_case)
     public static let KeyCleanup = ConversionOptions(rawValue: 8)
     
+    /// Default used for NSCoding
+    public static var DefaultNSCoding: ConversionOptions = [None]
+    /// Default used for comparing / hashing functions
+    public static var DefaultComparing: ConversionOptions = [PropertyConverter, PropertyMapping, SkipPropertyValue]
+    /// Default used for deserialisation
     public static var DefaultDeserialize: ConversionOptions = [PropertyConverter, PropertyMapping, SkipPropertyValue, KeyCleanup]
+    /// Default used for serialisation
     public static var DefaultSerialize: ConversionOptions = [PropertyConverter, PropertyMapping, SkipPropertyValue]
     
+    /// Get a nice description of the ConversionOptions
     public var description: String {
         let strings = ["PropertyConverter", "PropertyMapping", "SkipPropertyValue", "KeyCleanup"]
         var members = [String]()
@@ -1207,19 +1238,39 @@ public struct ConversionOptions: OptionSetType, CustomStringConvertible {
 
 }
 
+/**
+ Type of status messages after deserialisation
+ */
 public struct DeserialisationStatus: OptionSetType, CustomStringConvertible {
+    /// The numeric representation of the options
     public let rawValue: Int
+    /**
+     Initialize with a raw value
+     
+     - parameter rawValue: the numeric representation
+     
+     - returns: the DeserialisationStatus
+     */
     public init(rawValue: Int) { self.rawValue = rawValue }
 
+    /// No status message
     public static let None = DeserialisationStatus(rawValue: 0)
+    /// Incorrect key error
     public static let IncorrectKey  = DeserialisationStatus(rawValue: 1)
+    /// Missing key error
     public static let MissingKey  = DeserialisationStatus(rawValue: 2)
+    /// Invalid type error
     public static let InvalidType  = DeserialisationStatus(rawValue: 4)
+    /// Invalid value error
     public static let InvalidValue  = DeserialisationStatus(rawValue: 8)
+    /// Invalid class error
     public static let InvalidClass  = DeserialisationStatus(rawValue: 16)
+    /// Missing protocol error
     public static let MissingProtocol  = DeserialisationStatus(rawValue: 32)
+    /// Custom status message
     public static let Custom  = DeserialisationStatus(rawValue: 64)
     
+    /// Get a nice description of the DeserialisationStatus
     public var description: String {
         let strings = ["IncorrectKey", "MissingKey", "InvalidType", "InvalidValue", "InvalidClass", "MissingProtocol", "Custom"]
         var members = [String]()

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21786B721CE78A4A00FDCB9E /* EverliveSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 21786B711CE78A4A00FDCB9E /* EverliveSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2187F8FB1D29815100B0A9C7 /* GeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2187F8FA1D29815100B0A9C7 /* GeoPoint.swift */; };
 		21C2B7011CE78B890092B008 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6C11CE78B890092B008 /* AccessToken.swift */; };
 		21C2B7021CE78B890092B008 /* AlamofireExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6C21CE78B890092B008 /* AlamofireExtensions.swift */; };
 		21C2B7031CE78B890092B008 /* AuthenticationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6C31CE78B890092B008 /* AuthenticationHandler.swift */; };
@@ -65,7 +66,6 @@
 		21C2B7371CE78B890092B008 /* UpdateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6F71CE78B890092B008 /* UpdateResult.swift */; };
 		21C2B7381CE78B890092B008 /* UploadFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6F81CE78B890092B008 /* UploadFileHandler.swift */; };
 		21C2B7391CE78B890092B008 /* UploadFileResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6F91CE78B890092B008 /* UploadFileResult.swift */; };
-		21C2B73A1CE78B890092B008 /* URLGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6FA1CE78B890092B008 /* URLGenerator.swift */; };
 		21C2B73B1CE78B890092B008 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6FB1CE78B890092B008 /* User.swift */; };
 		21C2B73C1CE78B890092B008 /* UserLoginMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6FC1CE78B890092B008 /* UserLoginMethod.swift */; };
 		21C2B73D1CE78B890092B008 /* UsersGenericHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6FD1CE78B890092B008 /* UsersGenericHandler.swift */; };
@@ -79,6 +79,7 @@
 		21786B6E1CE78A4A00FDCB9E /* EverliveSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EverliveSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21786B711CE78A4A00FDCB9E /* EverliveSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EverliveSDK.h; sourceTree = "<group>"; };
 		21786B731CE78A4A00FDCB9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2187F8FA1D29815100B0A9C7 /* GeoPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoPoint.swift; sourceTree = "<group>"; };
 		21C2B6C11CE78B890092B008 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		21C2B6C21CE78B890092B008 /* AlamofireExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireExtensions.swift; sourceTree = "<group>"; };
 		21C2B6C31CE78B890092B008 /* AuthenticationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationHandler.swift; sourceTree = "<group>"; };
@@ -136,7 +137,6 @@
 		21C2B6F71CE78B890092B008 /* UpdateResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateResult.swift; sourceTree = "<group>"; };
 		21C2B6F81CE78B890092B008 /* UploadFileHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadFileHandler.swift; sourceTree = "<group>"; };
 		21C2B6F91CE78B890092B008 /* UploadFileResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadFileResult.swift; sourceTree = "<group>"; };
-		21C2B6FA1CE78B890092B008 /* URLGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLGenerator.swift; sourceTree = "<group>"; };
 		21C2B6FB1CE78B890092B008 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		21C2B6FC1CE78B890092B008 /* UserLoginMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginMethod.swift; sourceTree = "<group>"; };
 		21C2B6FD1CE78B890092B008 /* UsersGenericHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersGenericHandler.swift; sourceTree = "<group>"; };
@@ -238,7 +238,6 @@
 				21C2B6F71CE78B890092B008 /* UpdateResult.swift */,
 				21C2B6F81CE78B890092B008 /* UploadFileHandler.swift */,
 				21C2B6F91CE78B890092B008 /* UploadFileResult.swift */,
-				21C2B6FA1CE78B890092B008 /* URLGenerator.swift */,
 				21C2B6FB1CE78B890092B008 /* User.swift */,
 				21C2B6FC1CE78B890092B008 /* UserLoginMethod.swift */,
 				21C2B6FD1CE78B890092B008 /* UsersGenericHandler.swift */,
@@ -247,6 +246,7 @@
 				21C2B7001CE78B890092B008 /* MultipleExpandDefinition.swift */,
 				21786B711CE78A4A00FDCB9E /* EverliveSDK.h */,
 				21786B731CE78A4A00FDCB9E /* Info.plist */,
+				2187F8FA1D29815100B0A9C7 /* GeoPoint.swift */,
 			);
 			path = EverliveSDK;
 			sourceTree = "<group>";
@@ -385,6 +385,7 @@
 				21C2B7191CE78B890092B008 /* File.swift in Sources */,
 				21C2B70A1CE78B890092B008 /* DataItem.swift in Sources */,
 				21C2B7111CE78B890092B008 /* EverliveCompoundQuery.swift in Sources */,
+				2187F8FB1D29815100B0A9C7 /* GeoPoint.swift in Sources */,
 				21C2B7351CE78B890092B008 /* UpdateModifier.swift in Sources */,
 				21C2B7211CE78B890092B008 /* GetByIdHandler.swift in Sources */,
 				21C2B7181CE78B890092B008 /* ExpandDefinition.swift in Sources */,
@@ -434,7 +435,6 @@
 				21C2B7371CE78B890092B008 /* UpdateResult.swift in Sources */,
 				21C2B7071CE78B890092B008 /* CreateMultipleHandler.swift in Sources */,
 				21C2B72D1CE78B890092B008 /* ResultBase.swift in Sources */,
-				21C2B73A1CE78B890092B008 /* URLGenerator.swift in Sources */,
 				21C2B70D1CE78B890092B008 /* DeleteByIdHandler.swift in Sources */,
 				21C2B7031CE78B890092B008 /* AuthenticationHandler.swift in Sources */,
 				21C2B7011CE78B890092B008 /* AccessToken.swift in Sources */,
