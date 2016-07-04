@@ -13,4 +13,8 @@ import EVReflection
 public class GeoPoint : EVObject {
     public var Latitude:Double = 0.0
     public var Longitude:Double = 0.0
+    
+    override public func propertyMapping() -> [(String?, String?)] {
+        return [("Latitude","latitude"), ("Longitude", "longitude")]
+    }
 }
