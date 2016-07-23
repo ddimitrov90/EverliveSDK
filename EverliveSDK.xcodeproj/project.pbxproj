@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2127041B1D437887003F1F5D /* PushHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2127041A1D437887003F1F5D /* PushHandler.swift */; };
+		2127041D1D437B42003F1F5D /* CurrentDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2127041C1D437B42003F1F5D /* CurrentDevice.swift */; };
+		2127041F1D4380EC003F1F5D /* DevicesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2127041E1D4380EC003F1F5D /* DevicesHandler.swift */; };
+		212704211D43824C003F1F5D /* PushDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212704201D43824C003F1F5D /* PushDevice.swift */; };
 		21786B721CE78A4A00FDCB9E /* EverliveSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 21786B711CE78A4A00FDCB9E /* EverliveSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2187F8FB1D29815100B0A9C7 /* GeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2187F8FA1D29815100B0A9C7 /* GeoPoint.swift */; };
 		21C2B7011CE78B890092B008 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6C11CE78B890092B008 /* AccessToken.swift */; };
@@ -76,6 +80,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2127041A1D437887003F1F5D /* PushHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushHandler.swift; sourceTree = "<group>"; };
+		2127041C1D437B42003F1F5D /* CurrentDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentDevice.swift; sourceTree = "<group>"; };
+		2127041E1D4380EC003F1F5D /* DevicesHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesHandler.swift; sourceTree = "<group>"; };
+		212704201D43824C003F1F5D /* PushDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushDevice.swift; sourceTree = "<group>"; };
 		21786B6E1CE78A4A00FDCB9E /* EverliveSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EverliveSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21786B711CE78A4A00FDCB9E /* EverliveSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EverliveSDK.h; sourceTree = "<group>"; };
 		21786B731CE78A4A00FDCB9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -247,6 +255,10 @@
 				21786B711CE78A4A00FDCB9E /* EverliveSDK.h */,
 				21786B731CE78A4A00FDCB9E /* Info.plist */,
 				2187F8FA1D29815100B0A9C7 /* GeoPoint.swift */,
+				2127041A1D437887003F1F5D /* PushHandler.swift */,
+				2127041C1D437B42003F1F5D /* CurrentDevice.swift */,
+				2127041E1D4380EC003F1F5D /* DevicesHandler.swift */,
+				212704201D43824C003F1F5D /* PushDevice.swift */,
 			);
 			path = EverliveSDK;
 			sourceTree = "<group>";
@@ -386,11 +398,13 @@
 				21C2B70A1CE78B890092B008 /* DataItem.swift in Sources */,
 				21C2B7111CE78B890092B008 /* EverliveCompoundQuery.swift in Sources */,
 				2187F8FB1D29815100B0A9C7 /* GeoPoint.swift in Sources */,
+				2127041F1D4380EC003F1F5D /* DevicesHandler.swift in Sources */,
 				21C2B7351CE78B890092B008 /* UpdateModifier.swift in Sources */,
 				21C2B7211CE78B890092B008 /* GetByIdHandler.swift in Sources */,
 				21C2B7181CE78B890092B008 /* ExpandDefinition.swift in Sources */,
 				21C2B7141CE78B890092B008 /* EverliveQuery.swift in Sources */,
 				21C2B7251CE78B890092B008 /* LogoutHandler.swift in Sources */,
+				212704211D43824C003F1F5D /* PushDevice.swift in Sources */,
 				21C2B7271CE78B890092B008 /* MultipleResult.swift in Sources */,
 				21C2B72C1CE78B890092B008 /* RegexCondition.swift in Sources */,
 				21C2B7261CE78B890092B008 /* MasterKeyLoginMethod.swift in Sources */,
@@ -405,6 +419,7 @@
 				21C2B7021CE78B890092B008 /* AlamofireExtensions.swift in Sources */,
 				21C2B71F1CE78B890092B008 /* GetAllHandler.swift in Sources */,
 				21C2B73E1CE78B890092B008 /* UsersHandler.swift in Sources */,
+				2127041B1D437887003F1F5D /* PushHandler.swift in Sources */,
 				21C2B71E1CE78B890092B008 /* GenericResult.swift in Sources */,
 				21C2B7221CE78B890092B008 /* GetCountHandler.swift in Sources */,
 				21C2B7131CE78B890092B008 /* EverliveError.swift in Sources */,
@@ -435,6 +450,7 @@
 				21C2B7371CE78B890092B008 /* UpdateResult.swift in Sources */,
 				21C2B7071CE78B890092B008 /* CreateMultipleHandler.swift in Sources */,
 				21C2B72D1CE78B890092B008 /* ResultBase.swift in Sources */,
+				2127041D1D437B42003F1F5D /* CurrentDevice.swift in Sources */,
 				21C2B70D1CE78B890092B008 /* DeleteByIdHandler.swift in Sources */,
 				21C2B7031CE78B890092B008 /* AuthenticationHandler.swift in Sources */,
 				21C2B7011CE78B890092B008 /* AccessToken.swift in Sources */,

@@ -37,6 +37,10 @@ public class EverliveApp {
         return FilesHandler(connection: self.connection)
     }
     
+    public func Push() -> PushHandler {
+        return PushHandler(connection: self.connection)
+    }
+    
     let _apiServerUrl: String = "http://api.everlive.com"
     let _apiVersion: String = "/v1"
 }
