@@ -46,6 +46,12 @@ public class PushDevice : DataItem {
         }
     }
     
+    public var Parameters: NSDictionary? {
+        didSet {
+            propertyChanged.raise("Parameters")
+        }
+    }
+    
     override public func getTypeName() -> String {
         return "Push/Devices"
     }

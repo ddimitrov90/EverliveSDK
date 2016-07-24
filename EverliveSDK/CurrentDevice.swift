@@ -24,9 +24,9 @@ public class CurrentDevice {
         self.pushHandler = pushHandler
     }
     
-    public func register(token: NSData, completionHandler: (Bool, EverliveError?) -> Void) {
+    public func register(token: NSData, deviceParams: Dictionary<String,NSObject>?, completionHandler: (Bool, EverliveError?) -> Void) {
         let newDevice = PushDevice()
-        newDevice.HardwareId = "k0r"
+        newDevice.HardwareId = UIDevice.currentDevice().identifierForVendor?.UUIDString
         var token = token.description.stringByReplacingOccurrencesOfString("<", withString: "")
         token = token.stringByReplacingOccurrencesOfString(">", withString: "")
         token = token.stringByReplacingOccurrencesOfString(" ", withString: "")
@@ -35,8 +35,32 @@ public class CurrentDevice {
         newDevice.PlatformVersion = UIDevice.currentDevice().systemVersion
         newDevice.Locale = NSLocale.currentLocale().localeIdentifier
         newDevice.TimeZone = NSTimeZone.defaultTimeZone().name
+        newDevice.Parameters = deviceParams
         
         self.pushHandler.Devices().create(newDevice).execute(completionHandler)
+    }
+    
+    public func updateRegistration(deviceParams: Dictionary<String,NSObject>, completionHandler: (UpdateResult, EverliveError?) -> Void){
+        self.getRegistration { (device:PushDevice?, err: EverliveError?) in
+            if let registration = device {
+                registration.Parameters = deviceParams
+                self.pushHandler.Devices().updateById("HardwareId/" + registration.HardwareId!, updateObject: registration).execute(completionHandler)
+            } else {
+                completionHandler(UpdateResult(), err)
+            }
+        }
+    }
+    
+    public func getRegistration(completionHandler: (PushDevice?, EverliveError?) -> Void){
+        let hardwareId = UIDevice.currentDevice().identifierForVendor?.UUIDString
+        self.pushHandler.Devices().getById("HardwareId/" + hardwareId!).execute(completionHandler)
+    }
+    
+    public func unregister(completionHandler: (Bool, EverliveError?) -> Void){
+        let hardwareId = UIDevice.currentDevice().identifierForVendor?.UUIDString
+        self.pushHandler.Devices().deleteById("HardwareId/" + hardwareId!).execute { (resultCount:Int?, err:EverliveError?) in
+            completionHandler(resultCount != nil && resultCount > 0, err)
+        }
     }
     
 }
