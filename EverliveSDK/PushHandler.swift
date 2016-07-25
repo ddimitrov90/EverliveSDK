@@ -24,4 +24,8 @@ public class PushHandler {
     public func Devices() -> DevicesHandler {
         return DevicesHandler(connection: self.connection)
     }
+    
+    public func Notifications() -> NotificationsHandler {
+        return NotificationsHandler(connection: self.connection)
+    }
 }

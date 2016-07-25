@@ -11,6 +11,8 @@
 		2127041D1D437B42003F1F5D /* CurrentDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2127041C1D437B42003F1F5D /* CurrentDevice.swift */; };
 		2127041F1D4380EC003F1F5D /* DevicesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2127041E1D4380EC003F1F5D /* DevicesHandler.swift */; };
 		212704211D43824C003F1F5D /* PushDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212704201D43824C003F1F5D /* PushDevice.swift */; };
+		212773161D46B589007083D7 /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212773151D46B589007083D7 /* PushNotification.swift */; };
+		212773181D46B5AB007083D7 /* NotificationsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212773171D46B5AB007083D7 /* NotificationsHandler.swift */; };
 		21786B721CE78A4A00FDCB9E /* EverliveSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 21786B711CE78A4A00FDCB9E /* EverliveSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2187F8FB1D29815100B0A9C7 /* GeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2187F8FA1D29815100B0A9C7 /* GeoPoint.swift */; };
 		21C2B7011CE78B890092B008 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2B6C11CE78B890092B008 /* AccessToken.swift */; };
@@ -84,6 +86,8 @@
 		2127041C1D437B42003F1F5D /* CurrentDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentDevice.swift; sourceTree = "<group>"; };
 		2127041E1D4380EC003F1F5D /* DevicesHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesHandler.swift; sourceTree = "<group>"; };
 		212704201D43824C003F1F5D /* PushDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushDevice.swift; sourceTree = "<group>"; };
+		212773151D46B589007083D7 /* PushNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
+		212773171D46B5AB007083D7 /* NotificationsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsHandler.swift; sourceTree = "<group>"; };
 		21786B6E1CE78A4A00FDCB9E /* EverliveSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EverliveSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21786B711CE78A4A00FDCB9E /* EverliveSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EverliveSDK.h; sourceTree = "<group>"; };
 		21786B731CE78A4A00FDCB9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -259,6 +263,8 @@
 				2127041C1D437B42003F1F5D /* CurrentDevice.swift */,
 				2127041E1D4380EC003F1F5D /* DevicesHandler.swift */,
 				212704201D43824C003F1F5D /* PushDevice.swift */,
+				212773151D46B589007083D7 /* PushNotification.swift */,
+				212773171D46B5AB007083D7 /* NotificationsHandler.swift */,
 			);
 			path = EverliveSDK;
 			sourceTree = "<group>";
@@ -394,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21C2B71B1CE78B890092B008 /* FilterCondition.swift in Sources */,
+				212773181D46B5AB007083D7 /* NotificationsHandler.swift in Sources */,
 				21C2B7191CE78B890092B008 /* File.swift in Sources */,
 				21C2B70A1CE78B890092B008 /* DataItem.swift in Sources */,
 				21C2B7111CE78B890092B008 /* EverliveCompoundQuery.swift in Sources */,
@@ -405,6 +412,7 @@
 				21C2B7141CE78B890092B008 /* EverliveQuery.swift in Sources */,
 				21C2B7251CE78B890092B008 /* LogoutHandler.swift in Sources */,
 				212704211D43824C003F1F5D /* PushDevice.swift in Sources */,
+				212773161D46B589007083D7 /* PushNotification.swift in Sources */,
 				21C2B7271CE78B890092B008 /* MultipleResult.swift in Sources */,
 				21C2B72C1CE78B890092B008 /* RegexCondition.swift in Sources */,
 				21C2B7261CE78B890092B008 /* MasterKeyLoginMethod.swift in Sources */,
