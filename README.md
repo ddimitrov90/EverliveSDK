@@ -2,8 +2,6 @@
 
 This SDK is built to work with the [Progress Backend Services](https://platform.telerik.com) in order to create native iOS application by using the Swift language.
 
-This SDK is built to work with the Telerik Backend Services in order to create native iOS application by using the Swift language.
-
 
 ## Features
 
@@ -13,6 +11,7 @@ The features that are covered in the first version:
 - Work with data items
 - Work with users
 - Work with files
+- Subscribe for Push Notifications
 
 There is a [sample application](https://github.com/ddimitrov90/EverliveSampleApp) that demonstrates all features in a real case scenario here.
 
@@ -32,7 +31,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'EverliveSDK', '~> 1.0'
+    pod 'EverliveSDK', '~> 1.2.0'
 end
 ```
 
@@ -365,6 +364,20 @@ Here is an example of combined filter with sort, skip and take
     }
 
 
+## GeoPoint
+
+You can use the GeoPoint class to map a property of geolocation type in your custom data class. This way you have access to the longitude and lattitude of the saved location. 
+
+	let location = CLLocation(latitude: item.LocationProp.Latitude, longitude: item.LocationProp.Longitude)
+
+In order to save the location, you just have to create a GeoPoint object and populate the longitute and lattitude values.
+
+    item.LocationProp = GeoPoint()
+    item.LocationProp.Latitude = self.currentLocation.latitude
+    item.LocationProp.Longitude = self.currentLocation.longitude
+
+For more information on how to get the current location or show location info based on the geolocation field, visit [this](http://ddimitrov.net/#!/details/geopoint-support) post in my blog.
+
 ## Users
 
 The SDK comes with a predefined User class that represents the users in the backend. The class is simply based on the DataItem class with a few properties added. So all CRUD operations are valid in the same way, but only by using the **User()** handler of the **EverliveApp** instance.
@@ -437,8 +450,62 @@ Full demo of the upload functionality by using ImagePicker can be seen in the [s
     newFile.ContentType = "image/jpeg"
     newFile.Data = some-data-here
     EverliveSwiftApp.sharedInstance.Files().upload(newFile).execute { (success: Bool, err: EverliveError?) in
-        // newFile properties are populated, including the Id, which is needed for relations
-    }	
+        // newFile properties are populated, including the Id, which is needed for 
+        
+## Push Notifications
+
+You can subscribe for receiving push notifications by using the static class **everliveApp.Push().currentDevice**. Each device has a unique hardware Id, that is used for identification. That is why this is a static class, that automatically reads the system information of your device and save it in the Backend Services Device list.
+
+### Register
+In order to register for remote notifications, you need the device token that is available in the iOS **registerForRemoteNotifications** event handler. 
+
+	func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+	everliveApp.Push().currentDevice.register(deviceToken, deviceParams: nil) {
+        (success: Bool, err: EverliveError?) in
+     	// handle response
+    }
+}
+
+The full workflow is explained in [my blog post on push notifications](http://ddimitrov.net/#!/details/push-notifications-register).
+
+### Unregister
+To delete your device from the Platform backend and stop receiveing notifications, you have to simply call the unregister function.
+
+	everliveApp.Push().currentDevice.unregister { (succes: Bool, err:EverliveError?) in
+	// handle response        
+	}
+	
+### Device parameters
+When you want to store more information about each device registration, you can use the custom device parameters that will be stored along the system information. Most often, you store additional user information that can be used to target certain user group, when sending Push Notifications for segments.
+
+	func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+	    var deviceParams:[String: NSObject] = [:]
+	    deviceParams["Age"] = 31
+	    everliveApp.Push().currentDevice.register(deviceToken, deviceParams: deviceParams) { 
+	        (success: Bool, err: EverliveError?) in
+	    	// handle response
+	    }
+	}
+	
+You can later update those parameters by using the UpdateRegistration function and passing a new dictionary with values.
+
+	var deviceParams:[String: NSObject] = [:]
+	deviceParams["Age"] = 18
+	everliveApp.Push().currentDevice.updateRegistration(deviceParams) { 
+	 (result:UpdateResult, err:EverliveError?) in
+	    // handle response
+	}
+	
+### Get current registration
+You can check if the current device is already subscribed for remote notifications by getting the current device registration from Everlive.
+
+	EverliveSwiftApp.sharedInstance.Push().currentDevice.getRegistration { (result: PushDevice?, err:EverliveError?) in
+	    if let currentDevice = result {
+	        print(currentDevice.Parameters?.objectForKey("Age"))
+	    }
+	}
+
+If not nil, the PushDevice result object will contain all the information that is stored for that device. If the device is not registered, you will receive an Item not found error.
 
 ## Cloud functions
 
