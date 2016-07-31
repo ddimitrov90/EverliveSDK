@@ -2,7 +2,6 @@
 
 This SDK is built to work with the [Progress Backend Services](https://platform.telerik.com) in order to create native iOS application by using the Swift language.
 
-
 ## Features
 
 The features that are covered in the first version:
@@ -14,6 +13,12 @@ The features that are covered in the first version:
 - Subscribe for Push Notifications
 
 There is a [sample application](https://github.com/ddimitrov90/EverliveSampleApp) that demonstrates all features in a real case scenario here.
+
+## Build Status
+
+![](https://travis-ci.org/ddimitrov90/EverliveSdkTests.svg?branch=master)
+
+The tests for the SDK are in another repo.
 
 ## Requirements
 
