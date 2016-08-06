@@ -16,7 +16,7 @@ There is a [sample application](https://github.com/ddimitrov90/EverliveSampleApp
 
 ## Build Status
 
-![](https://travis-ci.org/ddimitrov90/EverliveSdkTests.svg?branch=master)
+![](https://travis-ci.org/ddimitrov90/EverliveSDK.svg?branch=master)
 
 The tests for the SDK are in another repo.
 
