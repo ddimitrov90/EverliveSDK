@@ -1,4 +1,4 @@
-# Progress Backend Servies (Everlive) iOS Swift SDK 
+# Progress Backend Services (Everlive) iOS Swift SDK 
 
 This SDK is built to work with the [Progress Backend Services](https://platform.telerik.com) in order to create native iOS application by using the Swift language.
 
